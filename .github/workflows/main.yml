@@ -23,9 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install --break-system-packages pyinstaller playwright psutil customtkinter pillow
 
-      - name: 打包 macOS App
+      - name: 打包 macOS App（不带自定义图标）
         run: |
-          pyinstaller --windowed --name="ICP备案批量上传工具" --icon=logo.icns icp_upload_tool.py
+          pyinstaller --windowed --name="ICP备案批量上传工具" icp_upload_tool.py
 
       - name: 上传产物
         uses: actions/upload-artifact@v4
